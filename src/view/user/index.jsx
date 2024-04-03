@@ -1,3 +1,4 @@
+import authRoute from '@/components/authRoute'
 import React, { memo } from 'react'
 
 const User = memo(() => {
@@ -6,4 +7,4 @@ const User = memo(() => {
   )
 })
 
-export default User
+export default authRoute(User)
