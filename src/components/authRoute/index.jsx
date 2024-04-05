@@ -1,7 +1,7 @@
 import { getToken } from "@/utils/token";
 import { Navigate } from "react-router-dom";
 
-// 高阶函数-->登录鉴权
+// 高阶组件-->登录鉴权
 function authRoute(Component) {
   return props => {
     const token = getToken('token_key')

@@ -1,9 +1,10 @@
 import authRoute from '@/components/authRoute'
 import React, { memo } from 'react'
+import { UserWrapper } from './style'
 
 const User = memo(() => {
   return (
-    <div>User</div>
+    <UserWrapper>User</UserWrapper>
   )
 })
 
