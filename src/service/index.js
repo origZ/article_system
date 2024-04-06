@@ -1,4 +1,4 @@
 import {request} from './request'
-import {getLogin} from './user'
+import {getLogin, getUserInfo} from './user'
 
-export {request, getLogin}
+export {request, getLogin, getUserInfo}

@@ -4,9 +4,9 @@ import { route } from './router'
 
 const App = memo(() => {
   return (
-    <div>
+    <>
       {useRoutes(route)}
-    </div>
+    </>
   )
 })
 

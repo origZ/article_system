@@ -4,3 +4,8 @@ import { request } from "./request"
 export function getLogin(loginForm) {
   return request.post('/authorizations', loginForm)
 }
+
+// 获取用户信息
+export function getUserInfo() {
+  return request.get('/user/profile')
+}
