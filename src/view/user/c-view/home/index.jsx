@@ -1,10 +1,12 @@
 import React, { memo } from 'react'
 import { HomeWrapper } from './style'
+import BarChart from './c-cpn'
 
 const Home = memo(() => {
   return (
     <HomeWrapper>
-      <div id='main' style={{width:"500px",height:"400px"}}></div>
+      <BarChart title='三大框架满意度' />
+      <BarChart title='三大框架使用度' />
     </HomeWrapper>
   )
 })
