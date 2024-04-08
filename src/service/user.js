@@ -19,3 +19,13 @@ export function getChannel() {
 export function fetchArticle(data) {
   return request.post('/mp/articles?draft=false',data)
 }
+
+// 获取文章列表
+export function getArticleList(params) {
+  return request.get('/mp/articles', {params})
+}
+
+// 删除文章
+export function delArticle(id) {
+  return request.delete(`/mp/articles/${id}`)
+}

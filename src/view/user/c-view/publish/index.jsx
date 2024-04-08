@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useState } from 'react'
 import { Card, Breadcrumb, Form, Button, Input, Space, Select, Radio, Upload, message } from 'antd'
 import { Option } from 'antd/es/mentions'
 import { PlusOutlined } from '@ant-design/icons'
@@ -6,22 +6,15 @@ import { Link } from 'react-router-dom'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { PublishWrapper } from './style'
-import { fetchArticle, getChannel } from '@/service'
+import { fetchArticle, } from '@/service'
+import { useChannel } from '@/hooks/useChannel'
 
 const Publish = memo(() => {
   // 定义内部的状态
-  const [channelList, setChannelList] = useState([])
   const [imageType, setImageType] = useState(0)
   const [imageList, setImageList] = useState([])
 
-  // 获取频道列表
-  const getChannelList = async () => {
-    const res = await getChannel()
-    setChannelList(res.data.channels)
-  }
-  useEffect(() => {
-    getChannelList()
-  }, [])
+  const {channelList} = useChannel()
 
     // 上传图片
     const onUploadChange = (value) => {
