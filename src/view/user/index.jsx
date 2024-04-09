@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react'
+import React, { Suspense, memo, useEffect } from 'react'
 import { Layout, Menu, Popconfirm } from 'antd'
 import { HomeOutlined, DiffOutlined, EditOutlined, LogoutOutlined } from '@ant-design/icons'
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
@@ -77,7 +77,9 @@ const User = memo(() => {
               style={{ height: '100%', borderRight: 0 }}></Menu>
           </Sider>
           <Layout className="layout-content" style={{ padding: 20 }}>
-            <Outlet/>
+            <Suspense fallback="加载中...">
+              <Outlet/>
+            </Suspense>
           </Layout>
         </Layout>
       </Layout>

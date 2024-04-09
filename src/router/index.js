@@ -1,9 +1,11 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import Login from "@/view/login";
+import React from "react";
 import User from "@/view/user";
-import Article from "@/view/user/c-view/article";
-import Home from "@/view/user/c-view/home";
-import Publish from "@/view/user/c-view/publish";
+import Login from "@/view/login";
+
+const Article = React.lazy(() => import('@/view/user/c-view/article'))
+const Home = React.lazy(() => import('@/view/user/c-view/home'))
+const Publish = React.lazy(() => import('@/view/user/c-view/publish'))
 
 export const route = createBrowserRouter(
   [

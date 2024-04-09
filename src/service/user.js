@@ -29,3 +29,13 @@ export function getArticleList(params) {
 export function delArticle(id) {
   return request.delete(`/mp/articles/${id}`)
 }
+
+// 获取文章详情
+export function getArticleById(id) {
+  return request.get(`/mp/articles/${id}`)
+}
+
+// 更新文章
+export function updateArticle(data) {
+  return request.put(`/mp/articles/${data.id}?draft=false`,data)
+}
